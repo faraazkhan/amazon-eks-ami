@@ -42,11 +42,13 @@ else
     echo "Unknown machine architecture '$MACHINE'" >&2
     exit 1
 fi
+#### Print STS Caller Identity ####
+
+aws sts get-caller-identity
 
 ################################################################################
 ### Packages ###################################################################
 ################################################################################
-
 # Update the OS to begin with to catch up to the latest packages.
 sudo yum update -y
 
